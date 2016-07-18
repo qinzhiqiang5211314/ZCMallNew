@@ -1,0 +1,73 @@
+//
+//  ZC-PrefixHeader.pch
+//  ZCMall
+//
+//  Created by hgh on 16/7/15.
+//  Copyright © 2016年 FHHY. All rights reserved.
+//
+
+#ifndef ZC_PrefixHeader_pch
+#define ZC_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+/**
+ *  自定义
+ */
+#define APPSIZE [[UIScreen mainScreen] bounds].size
+#define APPHEIGHT APPSIZE.height
+#define APPWIDTH APPSIZE.width
+#define APPRECT CGRectMake(0, 0, APPSIZE.width, APPSIZE.height)
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+/**
+ *  字体颜色
+ */
+#define CART_TEXT_COLOR [UIColor colorWithRed:74.0/255.0 green:74.0/255.0 blue:74.0/255.0 alpha:1]
+
+/**
+ *  线条颜色
+ */
+#define CART_HX_COLOR [UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:1]
+
+
+#define DEFAULT_FONT(s) [UIFont systemFontOfSize:s]//
+#define DEFAULT_BOLD_FONT(s) [UIFont boldSystemFontOfSize:s]
+/** 导航条的颜色 */
+#define APP_FEMALE_COLOR                   RGBA(255, 80, 115, 1.0)
+#define APP_NaviH                  64.0f
+#define APP_TabBarH                49.0f
+#define App_StatuBarH              20.0f
+
+/** =========================通知固定字符串========================== */
+#define NSNotification_LoginSucced @"APPLOGIN_SUCCED" //登录成功通知关键字
+#define NSNotification_LoginoutSucced @"APPLOGINOUT_SUCCED" //退出登录通知关键字 （执行退出操作）
+#define NSNotification_LoginAbnormal @"LogInAbnormal"  //登录异常通知关键字  发现登录异常 发通知 清理当前数据，用户重新登录（不需要执行退出登录操作）
+
+
+/**
+ *  常用文件
+ */
+#import "ZCCacheTool.H"
+#import "ZCSandBox.H"
+#import "UIImage+ZC.h"
+#import "UIView+ZC.h"
+#import "UIImageView+ZC.h"
+#import "NSString+ZC.h"
+#import "NSArray+Safe.h"
+#import "NSDictionary+Safe.h"
+#import "NSNull+Safe.h"
+
+
+
+
+#endif
+
+#endif /* ZC_PrefixHeader_pch */
